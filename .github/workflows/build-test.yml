@@ -25,7 +25,10 @@ jobs:
     - name: Install scala
       run: sudo apt-get install scala
     - name: Install fpp tools
-      run: compiler/install
+      run: |
+        curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz | gzip -d > cs
+        chmod +x cs
+        ./cs setup
     - name: Run sbt tests
       run: sbt test
     - name: Run fpp tests
