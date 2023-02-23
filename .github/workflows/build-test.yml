@@ -36,6 +36,7 @@ jobs:
     - name: Run fpp tests
       run: |
         cd compiler/
+        echo $(which scalac)
         ./test
     - name: Clean up
       run: |
