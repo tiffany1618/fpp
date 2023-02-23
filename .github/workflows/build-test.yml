@@ -27,8 +27,8 @@ jobs:
         curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz | gzip -d > cs
         chmod +x cs
         yes Y | ./cs setup
-        export PATH=$PATH:~/.local/share/coursier/bin
-        echo $PATH
+        export PATH=~/.local/share/coursier/bin:$PATH
+        echo $(which scalac)
     - name: Install fpp tools
       run: compiler/install
     - name: Run sbt tests
