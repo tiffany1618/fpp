@@ -28,6 +28,7 @@ jobs:
         chmod +x cs
         yes Y | ./cs setup
         export PATH=$PATH:~/.local/share/coursier/bin
+        echo $PATH
     - name: Install fpp tools
       run: compiler/install
     - name: Run sbt tests
